@@ -12,6 +12,16 @@ main {
     color: white;
     font-size: 45px;
 }
+#stocks {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+#crypto {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
 
 .tree-beard {
     height: 500px;
@@ -52,10 +62,12 @@ span {
 }
 
 .footer {
-    background-color: rgb(70, 132, 163);
+    background-color: rgb(15, 14, 14);
     padding: 10px;
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    color: aliceblue
+    color: aliceblue;
+    border-top: 5px solid rgb(15, 14, 14);
+    
 }
