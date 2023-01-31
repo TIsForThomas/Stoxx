@@ -7,6 +7,12 @@ main {
     background: linear-gradient(rgb(106, 71, 167), rgb(1, 71, 137));
 }
 
+#headername {
+    font-weight: bold;
+    color: white;
+    font-size: 45px;
+}
+
 .tree-beard {
     height: 500px;
     width: 100%;
@@ -41,7 +47,7 @@ span {
     background-image: url("https://bestanimations.com/media/sky/2018762848pink-beautiful-sky-gif.gif");
     background-size: cover;
     background-position: center;
-    border-top: 5px solid rgb(100, 97, 97);
+    border-top: 5px solid rgb(15, 14, 14);
     border-bottom: 5px solid rgb(15, 14, 14);
 }
 
