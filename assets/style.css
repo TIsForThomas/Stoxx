@@ -12,6 +12,21 @@ main {
     color: white;
     font-size: 45px;
 }
+
+
+#stock-symbol {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+
+#coin-name {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+
+
 #stocks {
     font-weight: bold;
     color: white;
