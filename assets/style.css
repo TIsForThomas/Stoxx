@@ -7,6 +7,22 @@ main {
     background: linear-gradient(rgb(106, 71, 167), rgb(1, 71, 137));
 }
 
+#headername {
+    font-weight: bold;
+    color: white;
+    font-size: 45px;
+}
+#stocks {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+#crypto {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+
 .tree-beard {
     height: 500px;
     width: 100%;
@@ -41,15 +57,17 @@ span {
     background-image: url("https://bestanimations.com/media/sky/2018762848pink-beautiful-sky-gif.gif");
     background-size: cover;
     background-position: center;
-    border-top: 5px solid rgb(100, 97, 97);
+    border-top: 5px solid rgb(15, 14, 14);
     border-bottom: 5px solid rgb(15, 14, 14);
 }
 
 .footer {
-    background-color: rgb(70, 132, 163);
+    background-color: rgb(15, 14, 14);
     padding: 10px;
     clear: both;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    color: aliceblue
+    color: aliceblue;
+    border-top: 5px solid rgb(15, 14, 14);
+    
 }
