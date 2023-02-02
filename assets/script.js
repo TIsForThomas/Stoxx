@@ -19,17 +19,37 @@ var stocksCard = document.querySelector('#stocks-card')
 var coinsCard = document.querySelector('#coins-card')
 
 
+
+function pageLoad() {
+
+    var lastCoinSave = JSON.parse(localStorage.getItem(coinSave))
+
+    if (lastCoinSave !== null) {
+        coinsCard.style.display = 'flex';
+        coinName.textContent = lastCoinSave[0]
+        coinSymbol.textContent = lastCoinSave[1]
+        coinPrice.textContent = lastCoinSave[2]
+        coinVolume.textContent = lastCoinSave[3]
+    }
+    else {
+        return;
+    }
+
+
+
+}
+
 function getUserInput() {
     let coinsSearch = document.querySelector('coins-input');
     getCoins(toString(coinsSearch));
 }
-coinsSearch.addEventListener('keyup', function(event) {
-    if (event.key !== 'Enter'){
+coinsSearch.addEventListener('keyup', function (event) {
+    if (event.key !== 'Enter') {
         return;
     }
     event.preventDefault();
     getUserInput();
-    return(false)
+    return (false)
 });
 coinsButton.addEventListener('click', getUserInput);
 
@@ -43,13 +63,13 @@ function getStocksUserInput() {
     let stocksSearch = document.querySelector('stocks-input');
     getStocks(toString(stocksSearch));
 }
-stocksSearch.addEventListener('keyup', function(event) {
-    if (event.key !== 'Enter'){
+stocksSearch.addEventListener('keyup', function (event) {
+    if (event.key !== 'Enter') {
         return;
     }
     event.preventDefault();
     getStocksUserInput();
-    return(false)
+    return (false)
 });
 stocksButton.addEventListener('click', getStocksUserInput);
 
@@ -89,7 +109,13 @@ function getCoins() {
                 coinPrice.textContent = 'Coin Price: ' + coinInfo.price
                 coinVolume.textContent = 'Coin Volume: ' + coinInfo.volume
 
-                window.localStorage.setItem("coinsCard", JSON.stringify(coinsCard));
+                var coinSave = [
+                    coinName.textContent = 'Coin Name: ' + coinInfo.name,
+                    coinSymbol.textContent = 'Coin Symbol: ' + coinInfo.coin,
+                    coinPrice.textContent = 'Coin Price: ' + coinInfo.price,
+                    coinVolume.textContent = 'Coin Volume: ' + coinInfo.volume,
+                ]
+                localStorage.setItem("coinSave", JSON.stringify(coinSave))
             }
         }
 
@@ -101,7 +127,7 @@ function getCoins() {
 
 
 function getStocks() {
-    var stocksAPI = 'https://api.polygon.io/v2/aggs/ticker/'+ stocksSearch.value + '/prev?adjusted=false&apiKey=' + apiKey
+    var stocksAPI = 'https://api.polygon.io/v2/aggs/ticker/' + stocksSearch.value + '/prev?adjusted=false&apiKey=' + apiKey
 
     fetch(stocksAPI)
 
@@ -127,7 +153,13 @@ function getStocks() {
                 stockLow.textContent = 'Stock Low: ' + stockInfo.l
                 stockClose.textContent = 'Stock Close: ' + stockInfo.c
 
-                window.localStorage.setItem("stocksCard", stocksCard);
+                var stockSave = [
+                    stockSymbol.textContent = 'Stock Symbol: ' + stockInfo.T,
+                    stockHigh.textContent = 'Stock High: ' + stockInfo.h,
+                    stockLow.textContent = 'Stock Low: ' + stockInfo.l,
+                    stockClose.textContent = 'Stock Close: ' + stockInfo.c,
+                ]
+                localStorage.setItem("stockSave", JSON.stringify(stockSave))
             }
 
         }
@@ -135,6 +167,7 @@ function getStocks() {
         );
 
 };
+
 
 
 
